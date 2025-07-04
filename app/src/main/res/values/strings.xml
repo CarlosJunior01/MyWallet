@@ -1,3 +1,25 @@
 <resources>
+    <!-- Dashboard -->
     <string name="app_name">MyWallet</string>
+    <string name="txt_welcome">Olá! Bem vindo!</string>
+    <string name="txt_balance">Saldo: R$ 0,00</string>
+    <string name="total_transaction">Transações: 0</string>
+    <string name="btn_extract">Ver Extrato</string>
+    <string name="btn_transfer">Transferir</string>
+
+    <!-- Login -->
+    <string name="txt_title_welcome">Bem-vindo!</string>
+    <string name="txt_enter">Entrar</string>
+    <string name="txt_register">Não tem uma conta? Cadastre-se</string>
+
+    <!-- Transaction -->
+    <string name="et_name">Nome</string>
+    <string name="et_email">Email</string>
+    <string name="et_password">Senha</string>
+    <string name="btn_register">Cadastrar</string>
+    <string name="new_transfer">Nova Transferência</string>
+    <string name="text_recipient">Email do destinatário</string>
+    <string name="input_amount">Valor</string>
+    <string name="btn_transfer_amount">Transferir</string>
+    <string name="statement_title">Extrato de Transações</string>
 </resources>
