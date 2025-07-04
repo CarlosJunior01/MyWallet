@@ -29,6 +29,11 @@
     <string name="amount_value">Saldo: R$ %.2f</string>
     <string name="transactions_value">Transações: %1$d</string>
 
+    <!-- Adapter -->
+    <string name="formatted_amount">R$ %.2f</string>
+    <string name="from_to_format">De: Usuário %1$d Para: Usuário %2$d</string>
+    <string name="date_format">dd/MM/yyyy</string>
+
     <!-- Alerts -->
     <string name="transfer_success">Transferência realizada!</string>
     <string name="login_success">Login realizado!</string>

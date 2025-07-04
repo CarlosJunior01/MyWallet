@@ -7,13 +7,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.carlosmagno.mywallet.R
 import com.carlosmagno.mywallet.data.local.TransactionEntity
-import java.text.SimpleDateFormat
-import java.util.*
+import com.carlosmagno.mywallet.util.formatDate
+import com.carlosmagno.mywallet.util.getFormattedAmount
+import com.carlosmagno.mywallet.util.getFormattedFromTo
 
 class TransactionsAdapter(private val transactions: List<TransactionEntity>) :
     RecyclerView.Adapter<TransactionsAdapter.TransactionViewHolder>() {
-
-    private val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransactionViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -34,11 +33,9 @@ class TransactionsAdapter(private val transactions: List<TransactionEntity>) :
         private val tvFromTo: TextView = itemView.findViewById(R.id.tvFromTo)
 
         fun bind(transaction: TransactionEntity) {
-            val amountFormatted = String.format("R$ %.2f", transaction.amount)
-            tvAmount.text = amountFormatted
-            tvDate.text = dateFormat.format(Date(transaction.timestamp))
-
-            tvFromTo.text = "De: Usuário ${transaction.fromUserId} Para: Usuário ${transaction.toUserId}"
+            tvAmount.text = itemView.getFormattedAmount(transaction.amount)
+            tvDate.text = itemView.formatDate(transaction.timestamp)
+            tvFromTo.text = itemView.getFormattedFromTo(transaction.fromUserId, transaction.toUserId)
         }
     }
 }
