@@ -13,20 +13,28 @@ class TransactionHistoryActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityTransactionHistoryBinding
     private val viewModel: TransactionHistoryViewModel by viewModel()
+    private var userId = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTransactionHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupExtras()
+        setupListeners()
+        setupViewModel()
+    }
 
+    private fun setupExtras() {
         binding.rvTransactions.layoutManager = LinearLayoutManager(this)
+        userId = intent.getIntExtra("USER_ID", -1)
+    }
 
-        val userId = intent.getIntExtra("USER_ID", -1)
-
-        viewModel.loadTransactions(userId)
-
+    private fun setupListeners() {
         binding.backButton.setOnClickListener { finish() }
+    }
 
+    private fun setupViewModel() {
+        viewModel.loadTransactions(userId)
         lifecycleScope.launch {
             viewModel.transactions.collectLatest { list ->
                 binding.rvTransactions.adapter = TransactionsAdapter(list)
