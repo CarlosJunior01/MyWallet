@@ -18,7 +18,11 @@ class RegisterActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupListeners()
+        observeRegisterState()
+    }
 
+    private fun setupListeners() {
         binding.btnRegister.setOnClickListener {
             val name = binding.etName.text.toString()
             val email = binding.etEmail.text.toString()
@@ -32,8 +36,6 @@ class RegisterActivity : ComponentActivity() {
         }
 
         binding.btnCancel.setOnClickListener { finish() }
-
-        observeRegisterState()
     }
 
     private fun observeRegisterState() {
