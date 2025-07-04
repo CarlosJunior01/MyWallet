@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_24dp"
+    android:background="#FAFAFA">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/new_transfer"
+        android:textSize="@dimen/text_24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/inputRecipient"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_32dp"
+        android:layout_marginEnd="@dimen/margin_48dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="@string/text_recipient"
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/margin_12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+
+    <ImageView
+        android:layout_width="@dimen/margin_42dp"
+        android:layout_height="@dimen/margin_42dp"
+        android:layout_marginStart="@dimen/margin_8dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_account_balance"
+        app:layout_constraintBottom_toBottomOf="@+id/inputRecipient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/inputRecipient"
+        app:layout_constraintTop_toTopOf="@+id/inputRecipient" />
+
+    <EditText
+        android:id="@+id/inputAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:layout_marginEnd="@dimen/margin_48dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="@string/input_amount"
+        android:inputType="numberDecimal"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputRecipient" />
+
+    <ImageView
+        android:layout_width="@dimen/margin_42dp"
+        android:layout_height="@dimen/margin_42dp"
+        android:layout_marginStart="@dimen/margin_8dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_money"
+        app:layout_constraintBottom_toBottomOf="@+id/inputAmount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/inputAmount"
+        app:layout_constraintTop_toTopOf="@+id/inputAmount" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnTransfer"
+        android:layout_width="@dimen/margin_0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_transfer_amount"
+        android:background="@drawable/bg_button_primary"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_16sp"
+        android:textStyle="bold"
+        android:padding="@dimen/margin_12dp"
+        app:layout_constraintTop_toBottomOf="@id/inputAmount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin_24dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
