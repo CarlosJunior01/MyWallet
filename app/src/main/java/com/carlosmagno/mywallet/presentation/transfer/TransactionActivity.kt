@@ -20,9 +20,16 @@ class TransactionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTransactionBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupExtras()
+        setupListeners()
+        setupViewModel()
+    }
 
+    private fun setupExtras() {
         loggedUserId = intent.getIntExtra("USER_ID", 0)
+    }
 
+    private fun setupListeners() {
         binding.btnTransfer.setOnClickListener {
             val recipientEmail = binding.inputRecipient.text.toString()
             val amountText = binding.inputAmount.text.toString()
@@ -37,7 +44,9 @@ class TransactionActivity : AppCompatActivity() {
         }
 
         binding.backButton.setOnClickListener { finish() }
+    }
 
+    private fun setupViewModel() {
         lifecycleScope.launchWhenStarted {
             viewModel.transferState.collectLatest { state ->
                 when (state) {
