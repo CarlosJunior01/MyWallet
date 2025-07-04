@@ -56,8 +56,8 @@ class DashboardActivity : AppCompatActivity() {
 
         lifecycleScope.launchWhenStarted {
             viewModel.uiState.collectLatest { state ->
-                binding.txtBalance.text = "Saldo: R$ %.2f".format(state.balance)
-                binding.txtTotalTransacoes.text = "Transações: ${state.totalTransactions}"
+                binding.txtBalance.text = getString(R.string.amount_value).format(state.balance)
+                binding.txtTotalTransacoes.text = getString(R.string.transactions_value, state.totalTransactions)
             }
         }
     }
