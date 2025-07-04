@@ -13,8 +13,11 @@ Your Digital Wallet Application.
 [![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)]()
 
 *******
+<img width="1189" alt="image" src="https://github.com/user-attachments/assets/9299fd65-ca1f-485c-9898-ddba3ea9865e" />
 
-<img width="1185" alt="image" src="https://github.com/user-attachments/assets/0a9e0e99-d65a-4be7-a821-4af91d219a9c" />
+<img width="1196" alt="image" src="https://github.com/user-attachments/assets/2d101757-12c6-4f02-afeb-2d745bda546a" />
+
+<img width="1198" alt="image" src="https://github.com/user-attachments/assets/4882d36c-55b3-4f58-bfae-965d896ad4b0" />
 
 *******
 
