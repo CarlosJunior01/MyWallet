@@ -26,6 +26,8 @@ class TransactionHistoryActivity : AppCompatActivity() {
 
         viewModel.loadTransactions(userId)
 
+        binding.backButton.setOnClickListener { finish() }
+
         lifecycleScope.launch {
             viewModel.transactions.collectLatest { list ->
                 binding.rvTransactions.adapter = TransactionsAdapter(list)

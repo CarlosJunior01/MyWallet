@@ -36,6 +36,8 @@ class TransactionActivity : AppCompatActivity() {
             viewModel.transfer(loggedUserId, recipientEmail, amount)
         }
 
+        binding.backButton.setOnClickListener { finish() }
+
         lifecycleScope.launchWhenStarted {
             viewModel.transferState.collectLatest { state ->
                 when (state) {
