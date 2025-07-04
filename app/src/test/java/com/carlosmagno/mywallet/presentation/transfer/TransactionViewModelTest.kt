@@ -37,7 +37,7 @@ class TransactionViewModelTest {
     }
 
     @Test
-    fun `transfer deve emitir Success quando a transferência for bem-sucedida`() = runTest {
+    fun `transfer should emit Success when the transfer is successful`() = runTest {
         val fromUserId = 1
         val toEmail = "destino@teste.com"
         val amount = 100.0
@@ -54,7 +54,7 @@ class TransactionViewModelTest {
     }
 
     @Test
-    fun `transfer deve emitir Error quando o usuário destinatário não for encontrado`() = runTest {
+    fun `transfer should throw Error when the recipient user is not found`() = runTest {
         val fromUserId = 1
         val toEmail = "naoencontrado@teste.com"
         val amount = 50.0
@@ -70,7 +70,7 @@ class TransactionViewModelTest {
     }
 
     @Test
-    fun `transfer deve emitir Error quando a transferência falhar`() = runTest {
+    fun `transfer should throw Error when transfer fails`() = runTest {
         val fromUserId = 1
         val toEmail = "erro@teste.com"
         val amount = 200.0
