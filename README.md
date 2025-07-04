@@ -59,6 +59,12 @@ Koin: É uma biblioteca de injeção de dependência que reduz a injeção manua
 Mockito: É uma ferramenta para mocking quando escrevemos testes para aplicações Kotlin. Nos ajuda a escrever código limpo e conciso ao testar aplicações Java e Kotlin.
 
 *******
+* **Tests:**
+*******
+
+<img width="1195" alt="image" src="https://github.com/user-attachments/assets/d93bf526-1552-4665-966c-6c9311b71053" />
+
+*******
 * **Conclusão:** 
 *******
 Para este projeto foi escolhido o padrão de Arquitetura MVVM com Clean Architecture justamente por fazer uso um padrão de divisão de responsabilidades, com separação de conceitos, e camadas diferentes, nele temos o desacoplamento da camada de "Dados" da camada de "Apresentação", Repository: Utilizado para centralizar funções e não repetir códigos centraliza o acesso aos dados. UseCases com responsabilidade única, possuindo as regras de negócio da aplicação e fazendo o meio de campo entre as duas camadas "ViewModel" e "Repository" separando ainda mais as responsabilidades da aplicação, separando a camada de apresentação da camada de dados.
