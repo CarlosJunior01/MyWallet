@@ -27,14 +27,14 @@ class TransactionHistoryViewModelTest {
 
     @Before
     fun setup() {
-        Dispatchers.setMain(testDispatcher) // 👈 substitui o Dispatchers.Main por um de teste
+        Dispatchers.setMain(testDispatcher)
         transactionRepository = mockk()
         viewModel = TransactionHistoryViewModel(transactionRepository)
     }
 
     @After
     fun tearDown() {
-        Dispatchers.resetMain() // 👈 limpa após o teste
+        Dispatchers.resetMain()
     }
 
     @Test
@@ -51,7 +51,7 @@ class TransactionHistoryViewModelTest {
 
         viewModel.loadTransactions(userId)
 
-        advanceUntilIdle() // Espera as corrotinas terminarem
+        advanceUntilIdle()
 
         val result = viewModel.transactions.value
         assertEquals(2, result.size)
