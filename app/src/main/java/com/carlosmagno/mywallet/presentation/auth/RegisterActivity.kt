@@ -24,8 +24,14 @@ class RegisterActivity : ComponentActivity() {
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
 
-            registerViewModel.register(name, email, password)
+            if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
+            } else {
+                registerViewModel.register(name, email, password)
+            }
         }
+
+        binding.btnCancel.setOnClickListener { finish() }
 
         observeRegisterState()
     }

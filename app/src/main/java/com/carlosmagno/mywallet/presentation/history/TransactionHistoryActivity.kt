@@ -9,7 +9,6 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-
 class TransactionHistoryActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityTransactionHistoryBinding

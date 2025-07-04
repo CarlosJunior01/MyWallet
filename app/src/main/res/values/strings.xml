@@ -7,6 +7,9 @@
     <string name="btn_extract">Ver Extrato</string>
     <string name="btn_transfer">Transferir</string>
 
+    <!-- Register -->
+    <string name="txt_register_title">Cadastro</string>
+
     <!-- Login -->
     <string name="txt_title_welcome">Bem-vindo!</string>
     <string name="txt_enter">Entrar</string>
@@ -17,6 +20,7 @@
     <string name="et_email">Email</string>
     <string name="et_password">Senha</string>
     <string name="btn_register">Cadastrar</string>
+    <string name="btn_cancel">Cancelar</string>
     <string name="new_transfer">Nova Transferência</string>
     <string name="text_recipient">Email do destinatário</string>
     <string name="input_amount">Valor</string>
