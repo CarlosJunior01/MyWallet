@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.carlosmagno.mywallet.R
 import com.carlosmagno.mywallet.databinding.ActivityDashboardBinding
 import com.carlosmagno.mywallet.presentation.history.TransactionHistoryActivity
 import com.carlosmagno.mywallet.presentation.transfer.TransactionActivity
@@ -28,9 +29,9 @@ class DashboardActivity : AppCompatActivity() {
     }
 
     private fun setupExtras() {
-        loggedUserId = intent.getIntExtra("USER_ID", -1)
+        loggedUserId = intent.getIntExtra(USER_ID, -1)
         if (loggedUserId == -1) {
-            Toast.makeText(this, "Usuário não autenticado", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.user_not_register), Toast.LENGTH_LONG).show()
             finish()
             return
         }
@@ -39,13 +40,13 @@ class DashboardActivity : AppCompatActivity() {
     private fun setupListeners() {
         binding.btnExtract.setOnClickListener {
             val intent = Intent(this, TransactionHistoryActivity::class.java)
-            intent.putExtra("USER_ID", loggedUserId)
+            intent.putExtra(USER_ID, loggedUserId)
             startActivity(intent)
         }
 
         binding.btnTransfer.setOnClickListener {
             val intent = Intent(this, TransactionActivity::class.java)
-            intent.putExtra("USER_ID", loggedUserId)
+            intent.putExtra(USER_ID, loggedUserId)
             startActivity(intent)
         }
     }
@@ -64,5 +65,9 @@ class DashboardActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         viewModel.loadDashboardData(loggedUserId)
+    }
+
+    companion object {
+        private const val USER_ID = "USER_ID"
     }
 }

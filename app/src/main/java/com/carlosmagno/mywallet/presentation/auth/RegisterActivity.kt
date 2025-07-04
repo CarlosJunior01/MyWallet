@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.lifecycle.lifecycleScope
+import com.carlosmagno.mywallet.R
 import com.carlosmagno.mywallet.databinding.ActivityRegisterBinding
 import kotlinx.coroutines.flow.collectLatest
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -29,7 +30,7 @@ class RegisterActivity : ComponentActivity() {
             val password = binding.etPassword.text.toString()
 
             if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.field_generic_error), Toast.LENGTH_SHORT).show()
             } else {
                 registerViewModel.register(name, email, password)
             }
@@ -52,7 +53,8 @@ class RegisterActivity : ComponentActivity() {
                     }
                     is RegisterViewModel.RegisterState.Success -> {
                         binding.progressLoading.visibility = View.GONE
-                        Toast.makeText(this@RegisterActivity, "Cadastro realizado com sucesso", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@RegisterActivity,
+                            getString(R.string.register_app_success), Toast.LENGTH_SHORT).show()
                         finish()
                     }
                     is RegisterViewModel.RegisterState.Error -> {

@@ -26,7 +26,7 @@ class TransactionHistoryActivity : AppCompatActivity() {
 
     private fun setupExtras() {
         binding.rvTransactions.layoutManager = LinearLayoutManager(this)
-        userId = intent.getIntExtra("USER_ID", -1)
+        userId = intent.getIntExtra(USER_ID, DEFAULT_VALUE)
     }
 
     private fun setupListeners() {
@@ -40,5 +40,10 @@ class TransactionHistoryActivity : AppCompatActivity() {
                 binding.rvTransactions.adapter = TransactionsAdapter(list)
             }
         }
+    }
+
+    companion object {
+        private const val USER_ID = "USER_ID"
+        private const val DEFAULT_VALUE = -1
     }
 }

@@ -26,4 +26,12 @@
     <string name="input_amount">Valor</string>
     <string name="btn_transfer_amount">Transferir</string>
     <string name="statement_title">Extrato de Transações</string>
+
+    <!-- Alerts -->
+    <string name="transfer_success">Transferência realizada!</string>
+    <string name="login_success">Login realizado!</string>
+    <string name="field_generic_error">Preencha todos os campos</string>
+    <string name="field_generic_correctly_error">Preencha os campos corretamente</string>
+    <string name="register_app_success">Cadastro realizado com sucesso</string>
+    <string name="user_not_register">Usuário não autenticado</string>
 </resources>

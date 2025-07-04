@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.carlosmagno.mywallet.R
 import com.carlosmagno.mywallet.databinding.ActivityTransactionBinding
 import kotlinx.coroutines.flow.collectLatest
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -26,7 +27,7 @@ class TransactionActivity : AppCompatActivity() {
     }
 
     private fun setupExtras() {
-        loggedUserId = intent.getIntExtra("USER_ID", 0)
+        loggedUserId = intent.getIntExtra(USER_ID, 0)
     }
 
     private fun setupListeners() {
@@ -36,7 +37,8 @@ class TransactionActivity : AppCompatActivity() {
             val amount = amountText.toDoubleOrNull()
 
             if (recipientEmail.isBlank() || amount == null || amount <= 0) {
-                Toast.makeText(this, "Preencha os campos corretamente", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,
+                    getString(R.string.field_generic_correctly_error), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -54,7 +56,8 @@ class TransactionActivity : AppCompatActivity() {
                         binding.progressScreen.visibility = View.VISIBLE
                     }
                     is TransactionViewModel.TransferState.Success -> {
-                        Toast.makeText(this@TransactionActivity, "Transferência realizada!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@TransactionActivity,
+                            getString(R.string.transfer_success), Toast.LENGTH_SHORT).show()
                         binding.progressScreen.visibility = View.GONE
                         finish()
                     }
@@ -66,5 +69,9 @@ class TransactionActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    companion object {
+        private const val USER_ID = "USER_ID"
     }
 }

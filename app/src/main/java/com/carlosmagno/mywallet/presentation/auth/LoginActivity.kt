@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.carlosmagno.mywallet.R
 import com.carlosmagno.mywallet.databinding.ActivityLoginBinding
 import com.carlosmagno.mywallet.presentation.dashboard.DashboardActivity
 import kotlinx.coroutines.flow.collectLatest
@@ -41,10 +42,11 @@ class LoginActivity : AppCompatActivity() {
             viewModel.loginState.collectLatest { state ->
                 when (state) {
                     is LoginViewModel.LoginState.Success -> {
-                        Toast.makeText(this@LoginActivity, "Login realizado!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@LoginActivity,
+                            getString(R.string.login_success), Toast.LENGTH_SHORT).show()
                         binding.progressScreen.visibility = View.GONE
                         val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
-                        intent.putExtra("USER_ID", state.user.id)
+                        intent.putExtra(USER_ID, state.user.id)
                         startActivity(intent)
                         finish()
                     }
@@ -59,5 +61,9 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    companion object {
+        private const val USER_ID = "USER_ID"
     }
 }
