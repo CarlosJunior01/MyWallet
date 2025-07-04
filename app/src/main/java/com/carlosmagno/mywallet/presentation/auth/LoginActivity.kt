@@ -20,7 +20,11 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupListeners()
+        setupViewModel()
+    }
 
+    private fun setupListeners() {
         binding.btnLogin.setOnClickListener {
             val email = binding.inputEmail.text.toString()
             val password = binding.inputPassword.text.toString()
@@ -30,7 +34,9 @@ class LoginActivity : AppCompatActivity() {
         binding.txtRegister.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
+    }
 
+    private fun setupViewModel() {
         lifecycleScope.launchWhenStarted {
             viewModel.loginState.collectLatest { state ->
                 when (state) {
