@@ -1,0 +1,77 @@
+# Diretórios de build
+/build/
+/app/build/
+/*/build/
+
+# Configurações específicas do Android Studio
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+/.idea/gradle.xml
+/.idea/.name
+
+# Arquivos de log e outros gerados
+*.log
+
+# Cache do Gradle
+.gradle/
+build/
+
+# Arquivos de compilação
+*.apk
+*.ap_ 
+*.dex
+
+# Arquivos temporários do sistema operacional
+*.DS_Store
+*.class
+*.swp
+*.swo
+*.orig
+
+# Arquivos do lint
+lint/intermediates/
+lint/generated/
+
+# Arquivos de log e temporários
+*.log
+*.tmp
+
+# Arquivos de testes
+test-output/
+
+# Pasta de saída de kapt (annotation processor)
+kapt/generated/
+
+# Gerados por Android Studio para config local
+captures/
+.externalNativeBuild/
+
+# Configurações de execução e preferências locais do Android Studio
+.idea/runConfigurations/
+.idea/assetWizardSettings.xml
+.idea/misc.xml
+
+# NDK/CMakelists
+.cxx/
+
+# Crashlytics/Firebase
+crashlytics-build.properties
+fabric.properties
+
+# Arquivos do local de execução (como .env)
+*.env
+.env.*
+
+# Arquivos gerados por serviços de análise de código
+/.scannerwork/
+
+# Arquivos do Jetpack Compose
+compose-metrics/
+compose-traces/
