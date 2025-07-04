@@ -2,6 +2,7 @@ package com.carlosmagno.mywallet.presentation.auth
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -35,6 +36,7 @@ class LoginActivity : AppCompatActivity() {
                 when (state) {
                     is LoginViewModel.LoginState.Success -> {
                         Toast.makeText(this@LoginActivity, "Login realizado!", Toast.LENGTH_SHORT).show()
+                        binding.progressScreen.visibility = View.GONE
                         val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
                         intent.putExtra("USER_ID", state.user.id)
                         startActivity(intent)
@@ -42,9 +44,10 @@ class LoginActivity : AppCompatActivity() {
                     }
                     is LoginViewModel.LoginState.Error -> {
                         Toast.makeText(this@LoginActivity, state.message, Toast.LENGTH_SHORT).show()
+                        binding.progressScreen.visibility = View.GONE
                     }
                     is LoginViewModel.LoginState.Loading -> {
-                        // TODO: exibir loading
+                        binding.progressScreen.visibility = View.VISIBLE
                     }
                     else -> Unit
                 }
