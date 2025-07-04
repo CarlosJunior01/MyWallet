@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout_register"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     android:orientation="vertical"
-    android:padding="@dimen/margin_24dp"
-    android:background="@color/colorBackground">
+    android:padding="@dimen/margin_24dp">
 
     <TextView
         android:id="@+id/tv_register_title"
@@ -14,28 +13,39 @@
         android:layout_height="wrap_content"
         android:text="@string/txt_register_title"
         android:textSize="@dimen/text_24sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/et_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_16dp"
-        android:hint="@string/et_name" />
+        android:background="@drawable/bg_edittext"
+        android:drawableEnd="@drawable/ic_create"
+        android:hint="@string/et_name"
+        android:padding="@dimen/margin_12dp" />
 
     <EditText
         android:id="@+id/et_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:background="@drawable/bg_edittext"
+        android:drawableEnd="@drawable/ic_create"
         android:hint="@string/et_email"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/margin_12dp" />
 
     <EditText
         android:id="@+id/et_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:background="@drawable/bg_edittext"
+        android:drawableEnd="@drawable/ic_create"
         android:hint="@string/et_password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:padding="@dimen/margin_12dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_register"
@@ -43,8 +53,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_32dp"
         android:background="@drawable/bg_button_primary"
-        android:textColor="@android:color/white"
-        android:text="@string/btn_register" />
+        android:text="@string/btn_register"
+        android:textColor="@android:color/white" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_cancel"
@@ -52,22 +62,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_32dp"
         android:background="@drawable/bg_button_secondary"
-        android:textColor="@color/colorPrimaryDark"
-        android:text="@string/btn_cancel" />
+        android:text="@string/btn_cancel"
+        android:textColor="@color/colorPrimaryDark" />
 
     <ProgressBar
         android:id="@+id/progress_loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/margin_16dp"/>
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/tv_error"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8dp"
         android:textColor="@android:color/holo_red_dark"
-        android:visibility="gone"
-        android:layout_marginTop="@dimen/margin_8dp"/>
+        android:visibility="gone" />
 </LinearLayout>
