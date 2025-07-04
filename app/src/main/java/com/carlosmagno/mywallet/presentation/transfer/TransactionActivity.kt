@@ -1,6 +1,7 @@
 package com.carlosmagno.mywallet.presentation.transfer
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -39,13 +40,16 @@ class TransactionActivity : AppCompatActivity() {
             viewModel.transferState.collectLatest { state ->
                 when (state) {
                     is TransactionViewModel.TransferState.Loading -> {
+                        binding.progressScreen.visibility = View.VISIBLE
                     }
                     is TransactionViewModel.TransferState.Success -> {
                         Toast.makeText(this@TransactionActivity, "Transferência realizada!", Toast.LENGTH_SHORT).show()
+                        binding.progressScreen.visibility = View.GONE
                         finish()
                     }
                     is TransactionViewModel.TransferState.Error -> {
                         Toast.makeText(this@TransactionActivity, state.message, Toast.LENGTH_SHORT).show()
+                        binding.progressScreen.visibility = View.GONE
                     }
                     else -> {}
                 }
