@@ -14,6 +14,10 @@ Your Digital Wallet Application.
 
 *******
 
+<img width="1185" alt="image" src="https://github.com/user-attachments/assets/0a9e0e99-d65a-4be7-a821-4af91d219a9c" />
+
+*******
+
 Aplicativo Android Nativo escrito em Kotlin, consumindo e persistindo dados locais e tratamento de concorrência com Kotlin Flow, utilizando padrão de arquitetura MVVM + Clean Architecture com divisão de responsabilidades e separação de conceitos e desacoplamento de camadas. Injeção de dependência com Koin. Funcionalidade de visualização de saldo, transacional entre contas, visualização de extrato com listagem de todo transacional, tratamento de erros. Testes unitários utilizando JUnit, Mockito.
 
 **MVVM:** Tem como principal objetivo separar responsabilidades entre Views e Modelos
